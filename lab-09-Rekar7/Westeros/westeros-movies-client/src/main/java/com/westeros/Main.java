@@ -32,17 +32,17 @@ public class Main {
          */
         //MovieDto movie = moviesClient.getMovie(99999);
         PagedResultDto result = moviesClient.getByDateRange(from, to);
-        var movies = result.movies();
+        var movies = result.results();
 
         /**
          * pobieram wszystkie strony wyników
          */
-//        for (int page = 1; page <= result.totalPages(); page++){
-//            movies.addAll(moviesClient.getByDateRange(from, to, page).movies());
-//        }
-//        var detailedMovies = new ArrayList<MovieDto>();
-//        var allCredits = new ArrayList<CreditsDto>();
-//
+        for (int page = 1; page <= result.totalPages(); page++){
+            movies.addAll(moviesClient.getByDateRange(from, to, page).results());
+        }
+        var detailedMovies = new ArrayList<MovieDto>();
+        var allCredits = new ArrayList<CreditsDto>();
+
 //        for (var movie : movies)
 //        {
             /**

@@ -9,11 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WesterosMoviesClientApplication implements CommandLineRunner {
 
 
-//    IMoviesClient client;
-//
-//    public WesterosMoviesClientApplication(IMoviesClient client) {
-//        this.client = client;
-//    }
+    IMoviesClient client;
+
+    public WesterosMoviesClientApplication(IMoviesClient client) {
+        this.client = client;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(WesterosMoviesClientApplication.class, args);
@@ -22,6 +22,6 @@ public class WesterosMoviesClientApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        //Main.CheckItOut(client);
+        Main.CheckItOut(client);
     }
 }
